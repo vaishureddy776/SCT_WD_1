@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration - Tech Conference</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Standard Favicon -->
+<link rel="icon" href="images/logo.png" type="image/x-icon">
+
+<!-- Optional: shortcut icon for older browsers -->
+<link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+
+</head>
+<body>
+
+    <!-- Navigation -->
+<header id="navbar">
+    <nav>
+        <div class="logo">
+    <img src="images/logo.png" alt="TechCon Logo">
+    <span>TechCon</span>
+    </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#details">Event Details</a></li>
+            <li><a href="#speakers">Speakers</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+        <a href="#register" class="cta-nav-btn">Register Now</a>
+    </nav>
+</header>
+
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Join the Biggest Tech Conference of 2025</h1>
+        <p>Connect with industry leaders, learn new trends, and network with like-minded innovators.</p>
+        <a href="#register" class="cta-btn">Book Your Slot</a>
+    </section>
+
+    <!-- Countdown Timer -->
+    <section id="countdown-section">
+    <h2>Countdown to TechCon 2025</h2>
+    <p>
+        The biggest tech conference of the year is almost here!  
+        Join over 5,000 innovators, developers, and industry leaders.  
+        Learn the latest trends in AI, Cloud, and Blockchain.  
+        Don’t miss out on networking, workshops, and exclusive sessions!
+    </p>
+    <p><strong>Secure your spot now before it’s too late!</strong></p>
+    <div id="countdown"></div>
+</section>
+
+
+
+
+<!-- Event Details -->
+<section id="details">
+    <h2>Event Details</h2>
+
+    <div class="event-top">
+        <!-- Venue Image -->
+        <div class="venue-image">
+            <img src="images/block.webp" alt="Hyderabad International Convention Centre">
+        </div>
+
+        <!-- Date, Venue, Time -->
+        <div class="event-info">
+            <p><strong>Date:</strong> 25th October 2025</p>
+            <p><strong>Venue:</strong> Hyderabad International Convention Centre</p>
+            <p><strong>Time:</strong> 10:00 AM - 6:00 PM</p>
+        </div>
+    </div>
+
+    <!-- Remaining Event Description -->
+    <p class="event-description">
+        Experience a full day of tech innovation, networking opportunities, and keynote speeches from industry pioneers. 
+        The event will cover topics such as AI, Cloud Computing, Cybersecurity, and IoT, providing actionable insights for both beginners and experts.
+    </p>
+
+    <!-- Event Points -->
+    <ul class="event-points">
+        <li>Live demos of cutting-edge technologies</li>
+        <li>Hands-on workshops with industry mentors</li>
+        <li>Networking sessions with investors & innovators</li>
+    </ul>
+</section>
+
+
+
+    <!-- Speakers Section -->
+    <!-- Speakers Section -->
+<!-- Speakers Section -->
+<section id="speakers">
+    <h2>Meet Our Speakers</h2>
+    <div class="speaker-list">
+        <div class="speaker">
+            <img src="images/speaker.webp" alt="John Doe">
+            <h3>John Doe</h3>
+            <p>AI Expert, Google</p>
+        </div>
+        <div class="speaker">
+            <img src="images/speaker2.webp" alt="Jane Smith">
+            <h3>Jane Smith</h3>
+            <p>Cloud Engineer, Microsoft</p>
+        </div>
+    </div>
+
+    <!-- Additional Info -->
+    <p class="speakers-info">
+        Our speakers bring years of industry experience and insights from cutting-edge technology projects.
+        Join their sessions to learn practical strategies, emerging trends, and tips to accelerate your career in AI, Cloud, and Cybersecurity.
+    </p>
+</section>
+
+
+
+<!-- Registration Section -->
+<section id="register">
+    <h2>Book Your Slot</h2>
+    <div class="register-container">
+        <!-- Contact Info -->
+        <div class="contact-info">
+    <h3>Contact Us</h3>
+    <p><strong>Phone:</strong> +91 9876543210</p>
+    <p><strong>Email:</strong> info@techcon2025.com</p>
+    <p><strong>Address:</strong> Hyderabad International Convention Centre, Hyderabad</p>
+
+    <!-- Additional Data -->
+    <div class="contact-additional">
+        <p>Our support team is available <strong>Mon - Fri, 9:00 AM - 6:00 PM</strong>.</p>
+        <p>For quick assistance, please reach out via <strong>email or phone</strong>.</p>
+        <p>We will respond within <strong>24 hours</strong> to all queries.</p>
+    </div>
+</div>
+
+
+        <!-- Registration Form -->
+        <div class="form-container">
+            <form>
+                <h3>Register Now</h3>
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <button type="submit">Submit Registration</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <p>&copy; 2025 TechCon. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#"><img src="images/Fb.png" alt="Facebook"></a>
+            <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
+        </div>
+    </div>
+</footer>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+</script>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

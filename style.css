@@ -1,0 +1,720 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: black; /* Dark gray */
+    color: white; /* Text color to contrast dark background */
+}
+
+/* Navigation Bar */
+header {
+     position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background 0.3s, padding 0.3s;
+    background: transparent;
+    padding: 15px 0;
+}
+
+header.scrolled {
+    background: black;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+    margin: auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.logo img {
+    height: 40px;       /* Adjust as needed */
+    margin-right: 10px; /* Space between logo and text */
+}
+
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-weight: 700;
+}
+
+.nav-links a:hover {
+    color: orange;
+}
+/* Scrolled header state */
+header.scrolled {
+    background: orange;
+}
+
+header.scrolled .nav-links a {
+    color: white; /* Normal text after scroll */
+}
+
+header.scrolled .nav-links a:hover {
+    color: black; /* Hover after scroll */
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url('images/heroimage.jpeg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    color: white;
+    z-index: 1;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.75); /* Adjust 0.5 for more or less transparency */
+    z-index: -1;
+}
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7); /* Improves text readability */
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+.hero .cta-btn {
+    background-color: orange;
+    color: black;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    position: relative;
+    z-index: 2; /* Ensures text stays above overlay */
+}
+
+.hero .cta-btn:hover {
+    background-color: black;
+    color: orange;
+}
+
+
+/* CTA in Navbar */
+/* Default state */
+.cta-nav-btn {
+    background: orange;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background 0.3s ease, color 0.3s ease;
+    margin-left: 25px;
+    display: inline-block;
+}
+
+.cta-nav-btn:hover {
+    background: black;
+    color: orange;
+}
+
+/* When header is scrolled */
+header.scrolled .cta-nav-btn {
+    background: black;   /* New background when scrolled */
+    color: white;
+}
+
+header.scrolled .cta-nav-btn:hover {
+    background: white;  /* New hover color when scrolled */
+    color: black;
+}
+
+section {
+    min-height: 60vh; /* Full screen height */
+    padding: 60px 20px;
+    box-sizing: border-box;
+}
+
+
+/* Countdown Section */
+#countdown-section {
+    background: black;
+    padding: 60px 20px;
+    color: orange;
+    text-align: center;
+
+    /* Flexbox for vertical & horizontal centering */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertical centering */
+    align-items: center;     /* Horizontal centering */
+    min-height: 70vh;       /* Full viewport height */
+}
+
+
+#countdown-section p {
+    font-size: 1.3rem;
+    line-height: 1.6;      /* Better readability */
+    margin-bottom: 40px;   /* Space between paragraphs and countdown */
+    color: #f5f5f5;
+    max-width: 1000px;      /* Keeps text readable on large screens */
+}
+
+#countdown-section strong {
+    color: orange;
+    font-weight: bold;
+}
+
+#countdown {
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: rgba(255, 165, 0, 0.1);
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 10px;
+    color: white;
+    text-shadow: 0 0 20px rgba(255, 165, 0, 0.5); /* soft glow always */
+    box-shadow: 0 0 25px rgba(255, 165, 0, 0.3);  /* outer glow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, text-shadow 0.3s ease;
+}
+
+#countdown:hover {
+    transform: scale(1.15); /* enlarge on hover */
+    text-shadow: 0 0 20px rgba(255, 165, 0, 0.9); /* glow stronger */
+    box-shadow: 0 0 25px rgba(255, 165, 0, 0.7);  /* outer glow stronger */
+}
+
+
+
+
+#details {
+    background: #1c1c1c;
+    padding: 80px 20px;  
+    color: white;
+    text-align: center; /* Paragraphs remain centered */
+}
+
+#details h2 {
+    color: orange;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#details p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin: 10px 0;
+}
+
+/* Align bullet points to left but keep them centered as a block */
+#details ul {
+    list-style: none;         /* Remove default bullets */
+    display: flex;            /* Horizontal layout */
+    justify-content: center;  /* Center the row */
+    gap: 20px;                /* Space between boxes */
+    padding: 0;
+    margin: 20px auto 0;
+    flex-wrap: wrap;          /* Wrap to next line on smaller screens */
+}
+
+#details ul li {
+    background: #222;         /* Dark box */
+    padding: 15px 25px;       /* Size of each box */
+    border-radius: 8px;
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+    color: white;
+    font-size: 1rem;
+    border: 1px solid transparent;
+    text-align: center;
+    min-width: 150px;         /* Ensure all boxes have similar size */
+}
+
+#details ul li:hover {
+    background: orange;       /* Highlight on hover */
+    color: black;
+    transform: translateY(-5px);  /* Slight lift effect */
+    border-color: white;
+}
+/* Container for image + info */
+.event-top {
+    display: flex;
+    flex-wrap: wrap;      /* Responsive stacking on small screens */
+    gap: 30px;            /* Space between image and info */
+    align-items: center;
+    margin-bottom: 30px;  /* Space below top section */
+}
+
+.venue-image {
+    flex: 1 1 40%;        /* Image takes 40% of width */
+    text-align: center;
+}
+
+.venue-image img {
+    width: 100%;
+    max-width: 400px;     /* Limit image size */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+}
+
+.venue-image img:hover {
+    transform: scale(1.02);
+}
+
+.event-info {
+    flex: 1 1 50%;        /* Info takes 50% of width */
+    color: white;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Event Description Full Width */
+.event-description {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: none;           /* Remove max-width */
+    width: 100%;               /* Span full section width */
+    text-align: center;        /* Center text or left-align if you prefer */
+    color: white;
+}
+
+/* Event Points Full Width */
+.event-points {
+    display: flex;
+    justify-content: center;   /* Keep points centered */
+    gap: 20px;
+    flex-wrap: wrap;
+    list-style: none;
+    margin-top: 20px;
+    padding: 0;
+    width: 100%;               /* Span full width */
+}
+
+
+.event-points li {
+    background: #222;
+    padding: 15px 20px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, background 0.3s ease;
+    cursor: pointer;
+}
+
+.event-points li:hover {
+    background: orange;
+    color: black;
+    transform: translateY(-5px);
+}
+
+
+
+
+/* Speakers Section */
+#speakers {
+    background: black;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+#speakers h2 {
+    color: orange;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+/* Speaker cards */
+.speaker-list {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Responsive layout */
+}
+
+.speaker {
+    background: #1c1c1c;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.speaker img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.speaker h3 {
+    margin: 10px 0 5px 0;
+    color: orange;
+}
+
+.speaker p {
+    color: #f5f5f5;
+}
+
+/* Hover effect */
+.speaker:hover {
+    transform: translateY(-10px);
+    background: orange;
+}
+
+.speaker:hover h3, 
+.speaker:hover p {
+    color: black;
+}
+
+.speakers-info {
+    max-width: 1100px;
+    margin: 30px auto 0 auto; /* Space above and center horizontally */
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #f5f5f5;
+    text-align: center;
+}
+
+
+/* Registration Form */
+/* Registration Section */
+#register {
+    background: #1c1c1c;
+    padding: 80px 20px;
+    color: white;
+    text-align: center;
+}
+
+/* Main Heading */
+#register h2 {
+    text-align: center;        /* Center the heading */
+    color: orange;             /* Same as Speakers & Countdown */
+    font-size: 2.5rem;         /* Large, bold text */
+    font-weight: bold;
+    margin-bottom: 50px;       /* Space below heading */
+}
+
+
+/* Container for Contact + Form */
+.register-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 5px;
+    max-width: 1000px;
+    margin: auto;
+    align-items: flex-start;
+}
+
+/* Contact Info */
+.contact-info {
+    flex: 1 1 40%;
+    min-width: 400px;
+    text-align: left;
+    line-height: 1.6;
+}
+
+.contact-info h3 {
+    color: orange;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.form-container {
+    flex: 1 1 55%;
+    min-width: 250px;
+    text-align: center;   /* Center heading and form on smaller screens */
+}
+
+.contact-additional {
+    font-size: 1.1rem;
+    line-height: 1.8;  /* more readable and longer lines */
+    max-width: 100%;   /* use full width of its flex column */
+    color: #f5f5f5;
+}
+
+
+.contact-additional p {
+    margin-bottom: 10px;
+}
+
+/* Form Heading */
+.form-container h3 {
+    color: orange;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    text-align: center;    /* Center heading */
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;    /* Center form inputs */
+}
+
+form input {
+    width: 100%;
+    max-width: 400px;     /* Keeps inputs uniform */
+    background: black;
+    color: white;
+    border: 1px solid orange;
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+form button {
+    width: 100%;
+    max-width: 400px;
+    background: orange;
+    color: black;
+    font-weight: bold;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+form button:hover {
+    background: black;
+    color: orange;
+}
+
+/* Responsive */
+@media (min-width: 1200px) {
+    .contact-info {
+        flex: 1 1 45%;  /* slightly wider on big screens */
+    }
+    .form-container {
+        flex: 1 1 50%;
+    }
+}
+
+
+
+
+/* Footer */
+footer {
+    background: #111;
+    color: #f5f5f5;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+footer .footer-container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+footer .social-links {
+    margin-top: 20px;
+}
+
+footer .social-links a {
+    margin: 0 10px;
+    display: inline-block;
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+footer .social-links a img {
+    width: 40px;        /* Icon width */
+    height: 40px;       /* Icon height */
+    object-fit: contain; /* Keeps aspect ratio inside box */
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+
+footer .social-links a:hover img {
+    transform: scale(1.2); /* Slight zoom on hover */
+}
+
+/* Active underline for nav links */
+.nav-links a {
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: orange;  /* Default underline color */
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.nav-links a.active::after {
+    transform: scaleX(1);
+}
+
+/* When header is scrolled, underline color can change */
+header.scrolled .nav-links a.active::after {
+    background: black;  /* Change this to whatever color you want on scroll */
+}
+
+/* About Section */
+#about {
+    padding: 80px 20px;
+    max-width: 1000px;
+    margin: auto;
+    color: white;
+    text-align: center; /* Center top heading and paragraph */
+}
+
+#about h2 {
+    color: orange;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+#about img {
+    width: 100%;
+    max-width: 700px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+/* Mission, Vision, Goals */
+#about-details {
+    background: black;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+#about-details h2 {
+    color: orange;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.about-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.card {
+    background: #1c1c1c;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1 1 250px;
+    max-width: 300px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.card:hover {
+    background: gray;
+    color: black;
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: orange;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #f5f5f5;
+    line-height: 1.6;
+}
+
+/* Organizers Section */
+#about-organizers {
+    background: #111;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+#about-organizers h2 {
+    color: orange;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.organizers-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.organizer {
+    text-align: center;
+}
+
+.organizer img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.organizer p {
+    color: #f5f5f5;
+    font-size: 1rem;
+}
+
+
+

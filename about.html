@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - TechCon 2025</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Standard Favicon -->
+<link rel="icon" href="images/logo.png" type="image/x-icon">
+
+<!-- Optional: shortcut icon for older browsers -->
+<link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+</head>
+<body>
+
+<!-- Navigation -->
+<header id="navbar">
+    <nav>
+        <div class="logo">
+            <img src="images/logo.png" alt="TechCon Logo">
+            <span>TechCon</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#details">Event Details</a></li>
+            <li><a href="index.html#speakers">Speakers</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+        </ul>
+        <a href="index.html#register" class="cta-nav-btn">Register Now</a>
+    </nav>
+</header>
+
+<!-- About Main Section -->
+<section id="about">
+    <h2>About TechCon 2025</h2>
+    <p>TechCon 2025 is the premier technology conference, bringing together innovators, tech enthusiasts, and industry leaders for a full day of learning, networking, and collaboration.</p>
+    <p>Experience keynote sessions, hands-on workshops, live demonstrations, and interactive panels covering AI, Cloud Computing, Cybersecurity, IoT, and more.</p>
+    <p>Whether you are a beginner or an expert, TechCon 2025 provides actionable insights and opportunities to connect with top professionals and investors.</p>
+</section>
+
+<!-- Mission, Vision, Goals -->
+<section id="about-details">
+    <h2>Mission, Vision & Goals</h2>
+    <div class="about-cards">
+        <div class="card">
+            <h3>Mission</h3>
+            <p>To bring together technology enthusiasts and professionals, fostering collaboration, innovation, and knowledge-sharing in emerging tech fields.</p>
+        </div>
+        <div class="card">
+            <h3>Vision</h3>
+            <p>To create a platform where ideas transform into actionable solutions, empowering the next generation of tech innovators.</p>
+        </div>
+        <div class="card">
+            <h3>Goals</h3>
+            <p>Engage participants with hands-on learning, connect them with industry leaders, and showcase the latest advancements in technology.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Organizers Section -->
+<section id="about-organizers">
+    <h2>Meet the Organizers</h2>
+    <div class="organizers-list">
+        <div class="organizer">
+            <img src="images/speaker.webp" alt="Organizer 1">
+            <p>M.Vikas - Program Director</p>
+        </div>
+        <div class="organizer">
+            <img src="images/speaker2.webp" alt="Organizer 2">
+            <p>K.Ravi - Technical Coordinator</p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <p>&copy; 2025 TechCon. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#"><img src="images/Fb.png" alt="Facebook"></a>
+            <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
+
+
+<!-- JS for header scroll & active underline -->
+<script>
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.nav-links a');
+const header = document.getElementById('navbar');
+
+window.addEventListener('scroll', () => {
+    let current = '';
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 70;
+        if (pageYOffset >= sectionTop) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(current)) {
+            link.classList.add('active');
+        }
+    });
+
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+</script>
+
+</body>
+</html>
